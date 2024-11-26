@@ -1,0 +1,25 @@
+﻿<Window x:Class="ProductCatalogWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Produktkatalog" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="ProductGrid" AutoGenerateColumns="False" HorizontalAlignment="Left" Margin="10,10,0,50" VerticalAlignment="Top" Width="750" Height="200">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding ID}" Header="ID" Width="50"/>
+                <DataGridTextColumn Binding="{Binding Name}" Header="Namn" Width="200"/>
+                <DataGridTextColumn Binding="{Binding Category.CategoryName}" Header="Kategori" Width="150"/>
+                <DataGridTextColumn Binding="{Binding Price}" Header="Pris" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBox x:Name="NameBox" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="CategoryBox" HorizontalAlignment="Left" Margin="170,220,0,0" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="PriceBox" HorizontalAlignment="Left" Margin="330,220,0,0" VerticalAlignment="Top" Width="100"/>
+
+        <Button Content="Lägg till" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top" Width="100" Click="AddProduct_Click"/>
+        <Button Content="Ta bort" HorizontalAlignment="Left" Margin="120,260,0,0" VerticalAlignment="Top" Width="100" Click="RemoveProduct_Click"/>
+        <Button Content="Uppdatera" HorizontalAlignment="Left" Margin="230,260,0,0" VerticalAlignment="Top" Width="100" Click="UpdateProduct_Click"/>
+        <Button Content="Spara" HorizontalAlignment="Left" Margin="340,260,0,0" VerticalAlignment="Top" Width="100" Click="SaveProducts_Click"/>
+        <Button Content="Läs in" HorizontalAlignment="Left" Margin="450,260,0,0" VerticalAlignment="Top" Width="100" Click="LoadProducts_Click"/>
+    </Grid>
+</Window>
